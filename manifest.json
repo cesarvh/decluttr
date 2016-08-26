@@ -1,0 +1,31 @@
+{
+"manifest_version": 2,
+    "name": "",
+    "description": "None",
+    "version": "1.0",
+	"browser_action": {
+		"default_icon": "icon.png",
+        "default_title": "Werk!",
+		"default_popup": "ops.html"
+
+	},
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "js/main.js","js/jquery-3.1.0.min.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions" : [
+        "storage",
+		"https://ajax.googleapis.com/",
+		"activeTab"
+
+    ],
+	"content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'"
+}
