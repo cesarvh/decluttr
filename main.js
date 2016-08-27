@@ -1,7 +1,6 @@
 toggle();
 
 function toggle() {
-	console.log("wahhh");
 	chrome.storage.sync.get("key", function(results){
 		var options = results.key;
 		for (var op in options) {

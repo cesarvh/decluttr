@@ -10,7 +10,17 @@ var buttons = {
 
 
 window.onload = function() {
-	loadUserPrefs();
+	// var initial = {
+	// 	"tumblr"    : false,
+	// 	"facebook"  : false,
+	// 	"twitter"   : false,
+	// 	"instagram" : false,
+	// 	"reddit"    : false,
+	// 	"youtube"   : false,
+	// 	"vine"      : false
+	// };
+	storeUserPrefs();
+	loadUserPrefs(buttons);
 //	console.log(loadUserPrefs());
 }
 
@@ -58,7 +68,6 @@ function loadUserPrefs() {
 //		console.log("loaded: ", obj)
 		buttons = obj.key;
 		
-		var vuttons = document.querySelectorAll('button');
 		var vuttons = document.querySelectorAll('button');
 		for (var i = 0; i < vuttons.length; i++) {
 			var currButton = vuttons[i].getAttribute("id");
