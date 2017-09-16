@@ -19,8 +19,9 @@ window.onload = function() {
 	// 	"youtube"   : false,
 	// 	"vine"      : false
 	// };
-	storeUserPrefs();
-	loadUserPrefs(buttons);
+	// console.log()
+	storeUserPrefs(buttons);
+	loadUserPrefs();
 //	console.log(loadUserPrefs());
 }
 
@@ -57,15 +58,16 @@ function toggle(e) {
 }
 
 function storeUserPrefs(prefs) {
-//	console.log(prefs);
+	// console.log("hellooo");
     var key = 'key';
 	chrome.storage.sync.set({key: prefs}, function() {
+
 	});
 }
 
 function loadUserPrefs() {
 	chrome.storage.sync.get("key", function(obj) {
-//		console.log("loaded: ", obj)
+		alert("loaded: ", obj)
 		buttons = obj.key;
 		
 		var vuttons = document.querySelectorAll('button');
